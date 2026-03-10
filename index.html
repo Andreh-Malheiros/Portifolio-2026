@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andreh Malheiros Tibério | Sistemas & RFID</title>
     
-    <!-- Google Fonts: Poppins -->
+    <title>Andreh Malheiros Tibério | Sistemas & RFID</title>
+    <meta name="description" content="Portfólio de Andreh Malheiros Tibério. Desenvolvedor Web e Auxiliar Técnico de Sistemas com foco em soluções escaláveis e integração de tecnologia RFID.">
+    <meta name="author" content="Andreh Malheiros Tibério">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://odevmalheiros.com/">
+    <meta property="og:title" content="Andreh Malheiros Tibério | Sistemas & RFID">
+    <meta property="og:description" content="Desenvolvedor Web e Auxiliar Técnico de Sistemas com foco em soluções escaláveis e integração de tecnologia RFID.">
+    <meta property="og:image" content="https://odevmalheiros.com/og-image.jpg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://odevmalheiros.com/">
+    <meta property="twitter:title" content="Andreh Malheiros Tibério | Sistemas & RFID">
+    <meta property="twitter:description" content="Desenvolvedor Web e Auxiliar Técnico de Sistemas com foco em soluções escaláveis e integração de tecnologia RFID.">
+    <meta property="twitter:image" content="https://odevmalheiros.com/og-image.jpg">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
     
-    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind CSS Configuração -->
     <script>
         tailwind.config = {
             theme: {
@@ -27,7 +40,7 @@
                         border: '#1F1F1F',
                         primary: '#FFFFFF',
                         secondary: '#A1A1AA',
-                        accent: '#1D4ED8' /* Azul Escuro */
+                        accent: '#1D4ED8'
                     },
                     fontFamily: {
                         poppins: ['Poppins', 'sans-serif'],
@@ -50,17 +63,13 @@
             cursor: none;
         }
 
-        ::selection {
-            background-color: #1D4ED8;
-            color: #FFFFFF;
-        }
+        ::selection { background-color: #1D4ED8; color: #FFFFFF; }
 
         /* Hardware Acceleration & Performance Optimization */
         .reveal, .hero-elem, .timeline-item, .skill-circle, .floating-icon, .bg-image, .bg-overlay, nav {
             will-change: transform, opacity;
         }
         
-        /* Simula a curva "spring" do Framer Motion para o Tubelight Navbar */
         .spring-transition {
             transition: transform 0.4s cubic-bezier(0.25, 1.2, 0.5, 1), 
                         width 0.4s cubic-bezier(0.25, 1.2, 0.5, 1), 
@@ -69,297 +78,122 @@
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050505;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1F1F1F;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #1D4ED8;
-            box-shadow: 0 0 10px #1D4ED8;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #1F1F1F; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1D4ED8; box-shadow: 0 0 10px #1D4ED8; }
 
         /* Custom Cursor */
         .cursor-follower {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 20px;
-            height: 20px;
-            background-color: #1D4ED8;
-            box-shadow: 0 0 15px rgba(29, 78, 216, 0.4); 
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
+            position: fixed; top: 0; left: 0; width: 20px; height: 20px;
+            background-color: #1D4ED8; box-shadow: 0 0 15px rgba(29, 78, 216, 0.4); 
+            border-radius: 50%; pointer-events: none; z-index: 9999;
             transform: translate(-50%, -50%);
             transition: width 0.3s, height 0.3s, background-color 0.3s, box-shadow 0.3s;
             mix-blend-mode: difference;
         }
         .cursor-active {
-            width: 50px;
-            height: 50px;
-            background-color: #FFFFFF;
+            width: 50px; height: 50px; background-color: #FFFFFF;
             box-shadow: 0 0 30px rgba(29, 78, 216, 0.6);
         }
 
-        /* =========================================
-           HIGH FIDELITY COMPONENT: SHIMMER BUTTON 
-           ========================================= */
+        /* SHIMMER BUTTON */
         .btn-shimmer {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 100px;
-            background: #000000;
-            overflow: hidden;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            color: #FFFFFF;
-            /* Inner Highlight Glass effect */
+            position: relative; display: inline-flex; align-items: center; justify-content: center;
+            border-radius: 100px; background: #000000; overflow: hidden;
+            font-family: 'Poppins', sans-serif; font-weight: 500; color: #FFFFFF;
             box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05), inset 0 -2px 4px rgba(0, 0, 0, 0.5);
-            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-            cursor: none;
-            z-index: 1;
-            transform: translateZ(0); /* Force GPU compositing */
-            will-change: transform, box-shadow;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; cursor: none; z-index: 1;
+            transform: translateZ(0); will-change: transform, box-shadow;
         }
-
-        /* Variantes de Tamanho */
-        .btn-shimmer.btn-lg {
-            height: 56px;
-            min-width: 112px;
-            padding: 0 32px;
-        }
-        .btn-shimmer.btn-sm {
-            height: 40px;
-            padding: 0 20px;
-        }
-
-        /* Dinâmica de Hover: Scale & Highlight */
+        .btn-shimmer.btn-lg { height: 56px; min-width: 112px; padding: 0 32px; }
+        .btn-shimmer.btn-sm { height: 40px; padding: 0 20px; }
         .btn-shimmer:hover:not(:disabled) {
             transform: scale(1.05);
             box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.15), 0 4px 20px rgba(29, 78, 216, 0.4);
         }
+        .btn-shimmer:disabled { opacity: 0.7; cursor: not-allowed; }
 
-        .btn-shimmer:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        /* Layer -2: Gradiente Cônico Rotativo (Shimmer Border) */
         .btn-shimmer .shimmer-bg {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            /* Azul suave rotacionando */
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: conic-gradient(from 0deg, transparent 70%, rgba(59, 130, 246, 0.8) 100%);
-            animation: shimmer-spin 3s linear infinite;
-            z-index: -2;
-            will-change: transform;
-            transition: background 0.4s ease-in-out;
+            animation: shimmer-spin 3s linear infinite; z-index: -2;
+            will-change: transform; transition: background 0.4s ease-in-out;
         }
-        /* Aumenta a opacidade da borda luminosa ao passar o mouse */
         .btn-shimmer:hover:not(:disabled) .shimmer-bg {
             background: conic-gradient(from 0deg, transparent 50%, rgba(29, 78, 216, 1) 100%);
         }
-
-        /* Layer -1: Máscara de Miolo Preta */
         .btn-shimmer::after {
-            content: '';
-            position: absolute;
-            inset: 2px; /* Define a espessura da borda shimmer */
-            background: #000000; /* Fundo preto absoluto garantindo contraste */
-            border-radius: 100px;
-            z-index: -1;
+            content: ''; position: absolute; inset: 2px;
+            background: #000000; border-radius: 100px; z-index: -1;
         }
-
-        /* Layer 0: Efeito Fill (Deslizamento da Esquerda para a Direita) */
         .btn-shimmer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 0%;
-            background-color: #1D4ED8; /* Cor adaptativa via Accent Color */
-            transition: width 0.4s ease-in-out;
-            z-index: 0;
-            border-radius: 100px;
+            content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 0%;
+            background-color: #1D4ED8; transition: width 0.4s ease-in-out;
+            z-index: 0; border-radius: 100px;
         }
-        /* Gatilho da transição Fill */
-        .btn-shimmer:hover:not(:disabled)::before {
-            width: 100%;
-        }
-
-        /* Layer 10: Hierarquia de Texto Intocável */
+        .btn-shimmer:hover:not(:disabled)::before { width: 100%; }
         .btn-shimmer .btn-text {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #FFFFFF;
-            white-space: nowrap;
-            /* Transição suave de foco/escala */
-            transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+            position: relative; z-index: 10; display: flex; align-items: center; gap: 0.5rem;
+            color: #FFFFFF; white-space: nowrap; transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
         }
-        /* Inteligência de Contraste: Accent Color base atual é escura (#1D4ED8), força cor da fonte para branca */
-        .btn-shimmer:hover:not(:disabled) .btn-text {
-            color: #FFFFFF; 
-        }
+        .btn-shimmer:hover:not(:disabled) .btn-text { color: #FFFFFF; }
 
-        @keyframes shimmer-spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes shimmer-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Variantes de cores do Shimmer para as ações de IA */
-        .btn-shimmer-ai .shimmer-bg {
-            background: conic-gradient(from 0deg, transparent 70%, rgba(168, 85, 247, 0.8) 100%); /* Roxo para IA */
-        }
-        .btn-shimmer-ai:hover:not(:disabled) .shimmer-bg {
-            background: conic-gradient(from 0deg, transparent 50%, rgba(147, 51, 234, 1) 100%);
-        }
-        .btn-shimmer-ai::before {
-            background-color: #9333EA;
-        }
-        .btn-shimmer-ai:hover:not(:disabled) {
-            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.15), 0 4px 20px rgba(147, 51, 234, 0.4);
-        }
-
-        /* Efeitos Tipográficos Adicionais (Resto do sistema) */
-        .text-outline {
-            color: transparent;
-            -webkit-text-stroke: 2px #1D4ED8;
-        }
-        .neon-text {
-            text-shadow: 0 0 10px rgba(29, 78, 216, 0.4), 0 0 20px rgba(29, 78, 216, 0.2);
-        }
-        .neon-text-ai {
-            text-shadow: 0 0 10px rgba(147, 51, 234, 0.4), 0 0 20px rgba(147, 51, 234, 0.2);
-            color: #C084FC;
-        }
+        .text-outline { color: transparent; -webkit-text-stroke: 2px #1D4ED8; }
+        .neon-text { text-shadow: 0 0 10px rgba(29, 78, 216, 0.4), 0 0 20px rgba(29, 78, 216, 0.2); }
         
         /* Fixed Background */
         .fixed-bg-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1; overflow: hidden;
         }
         .bg-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            background-color: #050505;
-            background-image: url('background.png'); 
-            background-size: cover;
-            background-position: center;
-            transform-origin: center;
+            width: 100%; height: 100%; object-fit: cover; object-position: center;
+            background-color: #050505; background-image: url('background.png'); 
+            background-size: cover; background-position: center; transform-origin: center;
         }
         .bg-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(5, 5, 5, 0);
-            backdrop-filter: blur(0px);
+            position: absolute; inset: 0; background: rgba(5, 5, 5, 0); backdrop-filter: blur(0px);
         }
 
         /* Timeline Styles */
-        .timeline-line-container {
-            width: 2px;
-            background-color: #1F1F1F;
-            position: relative;
-        }
+        .timeline-line-container { width: 2px; background-color: #1F1F1F; position: relative; }
         .timeline-progress {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #1D4ED8;
-            box-shadow: 0 0 10px #1D4ED8; 
-            height: 0%; 
+            position: absolute; top: 0; left: 0; width: 100%;
+            background-color: #1D4ED8; box-shadow: 0 0 10px #1D4ED8; height: 0%; 
         }
         .timeline-dot {
-            width: 12px;
-            height: 12px;
-            background-color: #050505;
-            border: 2px solid #1D4ED8;
-            box-shadow: 0 0 8px rgba(29, 78, 216, 0.6); 
-            border-radius: 50%;
-            position: absolute;
-            /* Recalibrado matematicamente para resolver sobreposição de margens (Gap 16) */
-            left: -71px; 
-            z-index: 10;
+            width: 12px; height: 12px; background-color: #050505; border: 2px solid #1D4ED8;
+            box-shadow: 0 0 8px rgba(29, 78, 216, 0.6); border-radius: 50%;
+            position: absolute; left: -71px; z-index: 10;
         }
-        @media (min-width: 1024px) {
-            .timeline-dot {
-                /* Recalibrado para a largura ampliada em telas grandes (Gap 24) */
-                left: -103px; 
-            }
-        }
+        @media (min-width: 1024px) { .timeline-dot { left: -103px; } }
         
-        /* Markdown rendering inside AI output */
-        .ai-markdown strong { font-weight: 700; color: #fff; }
-        .ai-markdown p { margin-bottom: 0.75rem; }
-        .ai-markdown ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
-        .ai-markdown li { margin-bottom: 0.25rem; }
-
-        /* --- Media Queries (Responsividade Mobile-First/Adaptação) --- */
-        @media (max-width: 1024px) {
-            /* Ajuste de padding de segurança lateral em telas menores */
-            main { padding-left: 20px; padding-right: 20px; }
-        }
-
+        /* Media Queries */
+        @media (max-width: 1024px) { main { padding-left: 20px; padding-right: 20px; } }
         @media (max-width: 768px) {
-            .timeline-line-container {
-                width: 1px;
-            }
-            .btn-shimmer.btn-lg {
-                height: 50px;
-                min-width: 100%; /* Força largura total no mobile para CTAs */
-            }
+            .timeline-line-container { width: 1px; }
+            .btn-shimmer.btn-lg { height: 50px; min-width: 100%; }
         }
-
         @media (max-width: 480px) {
-            .timeline-item {
-                padding-bottom: 2rem;
-            }
-            .text-4xl, h1 {
-                font-size: 2.5rem !important; /* Redução de tipografia para evitar overflow horizontal */
-                line-height: 1.1;
-            }
+            .timeline-item { padding-bottom: 2rem; }
+            .text-4xl, h1 { font-size: 2.5rem !important; line-height: 1.1; }
         }
     </style>
 </head>
 <body class="antialiased font-poppins text-primary leading-body">
 
-    <!-- Custom Cursor -->
     <div class="cursor-follower" id="cursor"></div>
 
-    <!-- Fixed Dynamic Background -->
     <div class="fixed-bg-container">
         <div class="bg-image" id="bg-image"></div>
         <div class="bg-overlay" id="bg-overlay"></div>
     </div>
 
-    <!-- Tubelight Navbar Vanilla Adaptada -->
     <nav class="fixed bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 z-50 interactive-el font-poppins w-max max-w-[95vw]">
         <div class="relative flex items-center justify-center gap-1 sm:gap-2 md:gap-3 bg-surface/50 border border-border backdrop-blur-md py-1 px-1 rounded-full shadow-2xl" id="nav-container">
-            
-            <!-- Elemento "Lâmpada" (Spring Transition) -->
             <div id="lamp" class="absolute top-1 bottom-1 bg-accent/10 rounded-full -z-10 spring-transition" style="left: 4px; width: 0px;">
                 <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-accent rounded-t-full">
                     <div class="absolute w-12 h-6 bg-accent/30 rounded-full blur-md -top-2 -left-2"></div>
@@ -367,8 +201,6 @@
                     <div class="absolute w-4 h-4 bg-accent/30 rounded-full blur-sm top-0 left-2"></div>
                 </div>
             </div>
-
-            <!-- Itens de Navegação -->
             <a href="#home" class="nav-item relative cursor-pointer text-sm font-medium px-3 sm:px-4 md:px-5 py-2 md:py-2.5 rounded-full transition-colors text-secondary hover:text-accent flex items-center gap-2">
                 <i class="ph ph-house text-base sm:text-lg"></i> <span class="hidden md:inline">Início</span>
             </a>
@@ -389,25 +221,20 @@
 
     <main class="relative z-10 w-full max-w-[1720px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
         
-        <!-- HERO SECTION -->
         <section id="home" class="min-h-screen flex flex-col justify-center pt-20 pb-20 relative">
             <div class="flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-20">
                 <div class="w-full lg:w-[65%] xl:w-[60%] flex flex-col items-center text-center lg:items-start lg:text-left z-10">
-                    
                     <div class="flex items-center gap-3 mb-4 hero-elem justify-center lg:justify-start">
                         <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                         <span class="text-sm font-medium text-secondary uppercase tracking-wider">Andreh Malheiros Tibério</span>
                     </div>
-                    
                     <h1 class="text-4xl sm:text-5xl md:text-[4rem] lg:text-[4.5vw] xl:text-[4.8vw] font-extrabold tracking-tight mb-6 md:mb-8 leading-[1.2] md:leading-[1.1] whitespace-nowrap hero-elem">
                         Sistemas <span class="text-outline">Escaláveis.</span><br>
                         Soluções <span class="text-outline">RFID.</span>
                     </h1>
-                    
                     <p class="text-base sm:text-lg md:text-xl text-secondary mb-8 md:mb-10 font-medium whitespace-normal max-w-2xl hero-elem">
                         Auxiliar Técnico de Sistemas na MultiFiber, focado em testes técnicos e integração de tecnologia RFID. Formado pelo Colégio Cotemig com base sólida em desenvolvimento de sistemas.
                     </p>
-                    
                     <div class="flex flex-col sm:flex-row gap-4 hero-elem w-full sm:w-auto justify-center lg:justify-start">
                         <a href="#projects" class="btn-shimmer btn-lg interactive-el w-full sm:w-auto">
                             <span class="shimmer-bg"></span>
@@ -419,14 +246,12 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="absolute inset-0 lg:relative lg:block w-full lg:w-[35%] xl:w-[40%] h-full lg:h-[600px] opacity-10 lg:opacity-100 pointer-events-none lg:pointer-events-auto -z-10 lg:z-10">
                     <div class="absolute inset-0 w-full h-full object-cover rounded-2xl bg-transparent" id="hero-image-placeholder"></div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
         <section id="about" class="py-20 md:py-24 border-t border-border/50">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-20">
                 <div class="lg:col-span-4 reveal">
@@ -458,7 +283,6 @@
             </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
         <section id="experience" class="py-20 md:py-24 border-t border-border/50">
             <div class="mb-12 md:mb-16 reveal">
                 <h2 class="text-sm font-medium uppercase tracking-widest text-secondary mb-2">02. Experiência</h2>
@@ -469,7 +293,6 @@
                 <div class="hidden md:block timeline-line-container flex-shrink-0 mt-2">
                     <div class="timeline-progress" id="timeline-progress-bar"></div>
                 </div>
-
                 <div class="flex-1 flex flex-col gap-10 md:gap-16">
                     
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8 lg:gap-16 relative reveal timeline-item border-b border-white/10 pb-10 md:pb-16 last:border-0 last:pb-0">
@@ -518,7 +341,6 @@
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
         <section id="projects" class="py-20 md:py-24 border-t border-border/50">
             <div class="mb-12 md:mb-16 reveal flex justify-between items-end">
                 <div>
@@ -528,7 +350,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12">
-                <!-- Project Card 1 -->
                 <div class="group relative rounded-2xl overflow-hidden border border-border interactive-el cursor-pointer reveal min-h-[300px] md:min-h-[350px]">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url(''); background-color: #0F0F0F;"></div>
                     <div class="absolute inset-0 bg-gradient-to-br from-surface/80 via-base/90 to-base backdrop-blur-md"></div>
@@ -536,7 +357,7 @@
                     <div class="relative z-10 p-6 md:p-10 h-full flex flex-col justify-between">
                         <div>
                             <h4 class="text-2xl md:text-3xl font-bold mb-4 group-hover:text-accent transition-colors neon-text">Sistema de Tarefas Online</h4>
-                            <p class="text-secondary mb-6 md:mb-8 text-sm md:text-base">Sistema desenvolvido para organização e gerenciamento prático de produtividade no dia a dia.</p>
+                            <p class="text-secondary mb-6 md:mb-8 text-sm leading-relaxed">Sistema desenvolvido para organização e gerenciamento prático de produtividade no dia a dia.</p>
                             <div class="flex flex-wrap gap-2 mb-8 md:mb-10">
                                 <span class="text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border border-border/50 bg-base/50 text-secondary rounded-full backdrop-blur-sm">JS</span>
                                 <span class="text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border border-border/50 bg-base/50 text-secondary rounded-full backdrop-blur-sm">HTML</span>
@@ -552,15 +373,14 @@
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
-                <div class="group relative rounded-2xl overflow-hidden border border-border interactive-el cursor-pointer reveal delay-100 min-h-[300px] md:min-h-[350px]">
+                <div class="group relative rounded-2xl overflow-hidden border border-border interactive-el cursor-pointer reveal min-h-[300px] md:min-h-[350px]">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url(''); background-color: #0F0F0F;"></div>
                     <div class="absolute inset-0 bg-gradient-to-br from-surface/80 via-base/90 to-base backdrop-blur-md"></div>
                     
                     <div class="relative z-10 p-6 md:p-10 h-full flex flex-col justify-between">
                         <div>
                             <h4 class="text-2xl md:text-3xl font-bold mb-4 group-hover:text-accent transition-colors neon-text">Cadastro e Perfil</h4>
-                            <p class="text-secondary mb-6 md:mb-8 text-sm md:text-base">Plataforma estruturada para registro, autenticação e gerenciamento de perfis de usuário.</p>
+                            <p class="text-[#A1A1AA] mb-6 md:mb-8 text-sm">Plataforma estruturada para registro, autenticação e gerenciamento de perfis de usuário.</p>
                             <div class="flex flex-wrap gap-2 mb-8 md:mb-10">
                                 <span class="text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border border-border/50 bg-base/50 text-secondary rounded-full backdrop-blur-sm">PHP</span>
                                 <span class="text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border border-border/50 bg-base/50 text-secondary rounded-full backdrop-blur-sm">MySQL</span>
@@ -575,7 +395,6 @@
                     </div>
                 </div>
 
-                 <!-- Project Card 3 -->
                  <div class="group relative rounded-2xl overflow-hidden border border-border interactive-el cursor-pointer reveal min-h-[300px] md:min-h-[350px]">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url(''); background-color: #0F0F0F;"></div>
                     <div class="absolute inset-0 bg-gradient-to-br from-surface/80 via-base/90 to-base backdrop-blur-md"></div>
@@ -583,7 +402,7 @@
                     <div class="relative z-10 p-6 md:p-10 h-full flex flex-col justify-between">
                         <div>
                             <h4 class="text-2xl md:text-3xl font-bold mb-4 group-hover:text-accent transition-colors neon-text">Manipulação de Tabelas</h4>
-                            <p class="text-secondary mb-6 md:mb-8 text-sm md:text-base">Interface dinâmica para exibição e controle de dados estruturados em formato tabular.</p>
+                            <p class="text-[#A1A1AA] mb-6 md:mb-8 text-sm">Interface dinâmica para exibição e controle de dados estruturados em formato tabular.</p>
                             <div class="flex flex-wrap gap-2 mb-8 md:mb-10">
                                 <span class="text-[10px] font-medium uppercase tracking-widest px-3 py-1.5 border border-border/50 bg-base/50 text-secondary rounded-full backdrop-blur-sm">JavaScript</span>
                             </div>
@@ -599,7 +418,6 @@
             </div>
         </section>
 
-        <!-- SKILLS SECTION -->
         <section id="skills" class="py-20 md:py-24 border-t border-border/50">
             <div class="mb-12 md:mb-16 reveal">
                 <h2 class="text-sm font-medium uppercase tracking-widest text-secondary mb-2">04. Proficiência</h2>
@@ -607,7 +425,6 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
-                <!-- Skill 1 -->
                 <div class="flex flex-col items-center justify-center reveal group interactive-el">
                     <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center mb-4 md:mb-6 floating-icon">
                         <svg viewBox="0 0 120 120" class="w-full h-full transform -rotate-90">
@@ -621,7 +438,6 @@
                     <h5 class="font-bold text-base md:text-lg text-center text-white">HTML/CSS</h5>
                 </div>
 
-                <!-- Skill 2 -->
                 <div class="flex flex-col items-center justify-center reveal group interactive-el">
                     <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center mb-4 md:mb-6 floating-icon">
                         <svg viewBox="0 0 120 120" class="w-full h-full transform -rotate-90">
@@ -635,7 +451,6 @@
                     <h5 class="font-bold text-base md:text-lg text-center text-white">JavaScript</h5>
                 </div>
 
-                <!-- Skill 3 -->
                 <div class="flex flex-col items-center justify-center reveal group interactive-el">
                     <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center mb-4 md:mb-6 floating-icon">
                         <svg viewBox="0 0 120 120" class="w-full h-full transform -rotate-90">
@@ -649,7 +464,6 @@
                     <h5 class="font-bold text-base md:text-lg text-center text-white">MySQL/Bancos</h5>
                 </div>
 
-                <!-- Skill 4 -->
                 <div class="flex flex-col items-center justify-center reveal group interactive-el">
                     <div class="relative w-24 h-24 md:w-32 md:h-32 flex items-center justify-center mb-4 md:mb-6 floating-icon">
                         <svg viewBox="0 0 120 120" class="w-full h-full transform -rotate-90">
@@ -665,7 +479,6 @@
             </div>
         </section>
 
-        <!-- CONTACT & FOOTER SECTION -->
         <section id="contact" class="py-20 md:py-24 border-t border-border/50 pb-32 md:pb-40">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
                 <div class="reveal">
@@ -698,13 +511,7 @@
                             <input type="email" id="email" name="email" required class="w-full bg-base border border-border rounded-lg px-4 md:px-5 py-3 md:py-4 text-primary focus:outline-none focus:border-accent transition-colors" placeholder="seu@email.com">
                         </div>
                         <div class="relative">
-                            <label class="flex justify-between items-end mb-2 md:mb-3">
-                                <span class="block text-sm font-medium text-secondary">Mensagem</span>
-                                <!-- AI Enhance Button com a cor exata da variável accent (#1D4ED8) -->
-                                <button type="button" id="enhance-msg-btn" class="text-xs font-bold text-accent hover:text-blue-500 transition-colors flex items-center gap-1 interactive-el">
-                                    <i class="ph-fill ph-sparkle"></i> Melhorar com IA
-                                </button>
-                            </label>
+                            <label class="block text-sm font-medium text-secondary mb-2 md:mb-3" for="message">Mensagem</label>
                             <textarea id="message" name="message" required rows="5" class="w-full bg-base border border-border rounded-lg px-4 md:px-5 py-3 md:py-4 text-primary focus:outline-none focus:border-accent transition-colors resize-none" placeholder="Conte-me sobre seu projeto..."></textarea>
                         </div>
                         
@@ -725,80 +532,23 @@
 
     </main>
 
-    <!-- GSAP Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Markdown Parser (for AI responses) -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
     <script>
-        // --- GEMINI API CONFIGURATION ---
-        const apiKey = ""; // API Key provided by the execution environment
-        
-        // Exponential backoff fetch function for Gemini API
-        async function fetchWithRetry(url, options, retries = 5, delay = 1000) {
-            try {
-                const res = await fetch(url, options);
-                if (!res.ok) {
-                    if (res.status === 429 || res.status >= 500) {
-                        if (retries > 0) {
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                            return fetchWithRetry(url, options, retries - 1, delay * 2);
-                        }
-                    }
-                    throw new Error(`HTTP error! status: ${res.status}`);
-                }
-                return await res.json();
-            } catch (error) {
-                if (retries > 0) {
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    return fetchWithRetry(url, options, retries - 1, delay * 2);
-                }
-                throw error;
-            }
-        }
-
-        async function callGeminiAPI(promptText) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const payload = {
-                contents: [{ parts: [{ text: promptText }] }],
-                generationConfig: { temperature: 0.7 }
-            };
-
-            try {
-                const data = await fetchWithRetry(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                return data.candidates?.[0]?.content?.parts?.[0]?.text || "";
-            } catch (error) {
-                console.error("Gemini API Error:", error);
-                throw error;
-            }
-        }
-
         // --- GSAP CONFIGURATION ---
         gsap.config({ force3D: true });
         gsap.registerPlugin(ScrollTrigger);
 
-        // Adaptação responsiva das animações iniciais GSAP (MatchMedia)
-        let mm = gsap.matchMedia();
+        // Verificação estática de ambiente para evitar re-cálculos problemáticos no mobile
+        const isMobileEnv = window.innerWidth <= 768;
+        const revealY = isMobileEnv ? 30 : 50;
 
-        mm.add("(min-width: 769px)", () => {
-            gsap.set(".hero-elem", { y: 40, autoAlpha: 0 });
-            gsap.set("#hero-image-placeholder", { scale: 0.95, rotationX: 5, autoAlpha: 0 });
-            gsap.set("nav", { y: 80, autoAlpha: 0 }); 
-            gsap.set('.reveal', { autoAlpha: 0, y: 50 });
-        });
-
-        mm.add("(max-width: 768px)", () => {
-            gsap.set(".hero-elem", { y: 20, autoAlpha: 0 }); // Reduzido para não causar overflow mobile
-            gsap.set("#hero-image-placeholder", { autoAlpha: 0 }); // Simplificado para mobile
-            gsap.set("nav", { y: 60, autoAlpha: 0 }); 
-            gsap.set('.reveal', { autoAlpha: 0, y: 30 }); // Reduzido para mobile
-        });
+        // Setup inicial seguro (substitui o matchMedia instável do mobile browser)
+        gsap.set(".hero-elem", { y: isMobileEnv ? 20 : 40, autoAlpha: 0 });
+        gsap.set("#hero-image-placeholder", { scale: isMobileEnv ? 1 : 0.95, rotationX: isMobileEnv ? 0 : 5, autoAlpha: 0 });
+        gsap.set("nav", { y: isMobileEnv ? 60 : 80, autoAlpha: 0 }); 
+        gsap.set('.reveal', { autoAlpha: 0, y: revealY });
 
         // Master Timeline
         window.addEventListener("load", () => {
@@ -807,10 +557,7 @@
             tlLoad.to(".hero-elem", { y: 0, autoAlpha: 1, stagger: 0.15 })
             .to("#hero-image-placeholder", { scale: 1, rotationX: 0, autoAlpha: 1 }, "-=0.9")
             .to("nav", { 
-                y: 0, 
-                autoAlpha: 1, 
-                duration: 1.5, 
-                ease: "back.out(1.2)",
+                y: 0, autoAlpha: 1, duration: 1.5, ease: "back.out(1.2)",
                 onComplete: () => {
                     const activeLink = document.querySelector('.nav-item.text-accent') || document.querySelector('.nav-item');
                     if(activeLink) updateActiveState(activeLink);
@@ -846,11 +593,11 @@
         bgTimeline.to("#bg-image", { scale: 1.15, force3D: true, ease: "none" }, 0)
             .to("#bg-overlay", { backgroundColor: "rgba(5, 5, 5, 0.75)", backdropFilter: "blur(15px)", ease: "none", force3D: true }, 0);
 
-        // Scroll Reveal
+        // Scroll Reveal Fluido Bidirecional
         ScrollTrigger.batch('.reveal', {
-            start: "top 90%",
-            onEnter: batch => gsap.to(batch, { autoAlpha: 1, y: 0, stagger: 0.08, duration: 1, ease: "expo.out", overwrite: true }),
-            onLeaveBack: batch => gsap.set(batch, { autoAlpha: 0, y: 50, overwrite: true })
+            start: "top 85%",
+            onEnter: batch => gsap.to(batch, { autoAlpha: 1, y: 0, stagger: 0.1, duration: 0.8, ease: "power2.out", overwrite: true }),
+            onLeaveBack: batch => gsap.to(batch, { autoAlpha: 0, y: revealY, stagger: 0.05, duration: 0.4, ease: "power1.in", overwrite: true })
         });
 
         // Timeline Line Animation
@@ -918,86 +665,7 @@
             if (activeItem) updateActiveState(activeItem);
         });
 
-        // --- GEMINI AI FEATURES LOGIC ---
-
-        // 1. AI Consulting
-        const aiGenerateBtn = document.getElementById('ai-generate-btn');
-        const aiProblemInput = document.getElementById('ai-problem-input');
-        const aiSolutionOutput = document.getElementById('ai-solution-output');
-        const aiSolutionContent = document.getElementById('ai-solution-content');
-
-        if (aiGenerateBtn) {
-            aiGenerateBtn.addEventListener('click', async () => {
-                const problem = aiProblemInput.value.trim();
-                if (!problem) return;
-
-                const originalBtnText = aiGenerateBtn.querySelector('.btn-text').innerHTML;
-                aiGenerateBtn.querySelector('.btn-text').innerHTML = '<i class="ph ph-spinner animate-spin text-xl"></i> Processando...';
-                aiGenerateBtn.disabled = true;
-                aiSolutionOutput.classList.add('hidden');
-
-                const prompt = `Você é uma IA assistente no portfólio de Andreh Malheiros Tibério, um profissional de TI especializado em desenvolvimento de sistemas e integração de tecnologia RFID. 
-                O usuário descreveu o seguinte desafio na empresa dele: "${problem}"
-                Por favor, escreva uma proposta técnica de alto nível detalhando como uma solução utilizando RFID e desenvolvimento de software poderia resolver esse problema. 
-                Seja conciso, profissional e divida a explicação em tópicos curtos (Arquitetura, Benefícios, Hardware RFID sugerido). Responda sempre em Português.`;
-
-                try {
-                    const response = await callGeminiAPI(prompt);
-                    aiSolutionContent.innerHTML = marked.parse(response);
-                    aiSolutionOutput.classList.remove('hidden');
-                    
-                    // Animate box opening
-                    gsap.fromTo(aiSolutionOutput, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.5, ease: "power2.out" });
-                } catch (error) {
-                    aiSolutionContent.innerHTML = "<p class='text-red-400'>Desculpe, não consegui gerar a solução no momento. Tente novamente mais tarde.</p>";
-                    aiSolutionOutput.classList.remove('hidden');
-                } finally {
-                    aiGenerateBtn.querySelector('.btn-text').innerHTML = originalBtnText;
-                    aiGenerateBtn.disabled = false;
-                }
-            });
-        }
-
-        // 2. AI Form Message Enhancer
-        const enhanceMsgBtn = document.getElementById('enhance-msg-btn');
-        const messageTextarea = document.getElementById('message');
-
-        if (enhanceMsgBtn) {
-            enhanceMsgBtn.addEventListener('click', async () => {
-                const currentMsg = messageTextarea.value.trim();
-                if (!currentMsg) {
-                    alert("Por favor, escreva um rascunho da sua mensagem antes de aprimorar com a IA.");
-                    return;
-                }
-
-                const originalBtnContent = enhanceMsgBtn.innerHTML;
-                enhanceMsgBtn.innerHTML = '<i class="ph ph-spinner animate-spin"></i> Melhorando...';
-                enhanceMsgBtn.disabled = true;
-
-                const prompt = `Você atua como um corretor profissional. Um potencial cliente está escrevendo uma mensagem de contato para Andreh Malheiros (Especialista em Sistemas e RFID). 
-                Reescreva a seguinte mensagem para que fique mais formal, educada, persuasiva e gramaticalmente correta. Não adicione informações que não estejam no rascunho original, apenas melhore a escrita.
-                Rascunho: "${currentMsg}"`;
-
-                try {
-                    const improvedText = await callGeminiAPI(prompt);
-                    // Typewriter effect for the new text
-                    messageTextarea.value = "";
-                    let i = 0;
-                    const typeWriter = setInterval(() => {
-                        messageTextarea.value += improvedText.charAt(i);
-                        i++;
-                        if (i >= improvedText.length) clearInterval(typeWriter);
-                    }, 10);
-                } catch (error) {
-                    console.error("Erro ao aprimorar mensagem:", error);
-                } finally {
-                    enhanceMsgBtn.innerHTML = originalBtnContent;
-                    enhanceMsgBtn.disabled = false;
-                }
-            });
-        }
-
-        // --- Formulário Backend (Formspree) ---
+        // Formulário Backend (Formspree)
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('submit-btn');
         const btnText = submitBtn.querySelector('.btn-text');
